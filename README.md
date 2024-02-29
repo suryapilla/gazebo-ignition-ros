@@ -6,6 +6,7 @@ Note that in this repository ROS Noetic and gazebo ignition Fortress are used in
 1. Follow this link to install ROS Noetic [ROS Noetic installation](https://wiki.ros.org/noetic/Installation/Ubuntu)
 2. Follow this link to install Gazebo Fortress [Gazebo Fortress installation](https://gazebosim.org/docs/fortress/install_ubuntu)
 3. Follow this link to build [ros-bridge for Fortress](https://gazebosim.org/docs/fortress/ros_integration) else follow instruction from noetic branch of the following repository [ros-bridge](https://github.com/gazebosim/ros_gz/tree/noetic)
+4. Additional details of the ros-bridge noetic can be found [here](https://github.com/gazebosim/ros_gz/tree/noetic/ros_ign_bridge)
 
 # Create a catkin ws
 

@@ -5,7 +5,7 @@
         <arg name="ign_args" value="-r -v 1 $(find ign-ros)/worlds/world1.sdf"/>
     </include>
 
-
+<!-- Create ROS bridge for required topics -->
     <node pkg="ros_ign_bridge" type="parameter_bridge" name="$(anon ros_ign_bridge)" output="screen" args="
                 /rgbd_camera/camera_info@sensor_msgs/CameraInfo@ignition.msgs.CameraInfo
                 /rgbd_camera/image@sensor_msgs/Image@ignition.msgs.Image 
@@ -18,19 +18,13 @@
                 /model/marble_husky_sensor_config_2/tf@tf2_msgs/TFMessage@ignition.msgs.Pose_V
                 "/>
 
-                <!-- /model/marble_husky_sensor_config_2/pose@geometry_msgs/PoseArray@ignition.msgs.Pose_V -->
-    <!-- <node pkg="turtlebot3_teleop" type="turtlebot3_teleop_key" name="turtlebot3_teleop_keyboard"  output="screen">
-        <remap from="cmd_vel" to="/model/marble_husky_sensor_config_2/cmd_vel"/>
-    </node> -->
+<!-- Load environment labels -->
     <rosparam file="$(find ign-ros)/config/label_colors_husky.yaml" command="load"/>
+
+<!-- Control the robot movement -->
     <node pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" name="turtlebot3_teleop_keyboard"  output="screen">
         <remap from="cmd_vel" to="/model/marble_husky_sensor_config_2/cmd_vel"/>
     </node>
-
-    <!-- <node type="rviz" name="rviz" pkg="rviz" args="-d $(find semantic_gazebo_simulation)/rviz/rviz_semantic_ignition.rviz"/> -->
-    
-    <!-- <node pkg="tf" type="static_transform_publisher" name="robot_start_frame" args="1 1 0 0 0 0 marble_husky_sensor_config_2 robot_start_frame 0" /> -->
-    
 
 
 </launch>
