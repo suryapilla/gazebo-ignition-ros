@@ -7,7 +7,7 @@ package_name="semantic_segmentation_husky"
 package_path=$(rospack find $package_name)
 
 # Create a variable for the models folder path
-models_path="$package_path/models"
+models_path="$package_path/sdf"
 # echo $models_path
 # Set the IGN_GAZEBO_RESOURCE_PATH environment variable
 export IGN_GAZEBO_RESOURCE_PATH=$models_path:$IGN_GAZEBO_RESOURCE_PATH
