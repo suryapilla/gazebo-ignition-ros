@@ -56,7 +56,7 @@ class SemanticCloud:
             "/semantic_pcl/semantic_pcl", PointCloud2, queue_size=1)
 
         self.rgb_image_topic = "rgbd_camera/image"
-        self.label_image_topic = "/image_dets" # "/semantic/colored_map" #
+        self.label_image_topic = "/semantic/colored_map" #
         self.depth_image_topic = "rgbd_camera/depth_image"
 
         # increase buffer size to avoid delay (despite queue_size = 1)
