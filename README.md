@@ -26,13 +26,13 @@ git clone https://github.com/suryapilla/gazebo-ignition-ros.git
 cd ~/catkin_ws/
 catkin build
 source devel/setup.bash
-source src/gazebo-ignition-ros/set_env_variables.sh
+source src/gazebo-ignition-ros/semantic_segmentation_husky/scripts/set_env_variables.sh
 ```
 Note: It is important to source the ros path run the bash file as shown in above last command
 
 # Run the simulation
 ```
-roslaunch ign-ros seg_husky.launch
+roslaunch semantic_segmentation_husky seg_husky.launch
 ```
 
 

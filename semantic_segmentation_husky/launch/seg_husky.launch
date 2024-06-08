@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<launch>
+
+    <include file="$(find ros_ign_gazebo)/launch/ign_gazebo.launch">
+        <arg name="ign_args" value="-r -v 1 $(find semantic_segmentation_husky)/worlds/world1.sdf"/>
+    </include>
+
+<!-- Create ROS bridge for required topics -->
+    <node pkg="ros_ign_bridge" type="parameter_bridge" name="$(anon ros_ign_bridge)" output="screen" args="
+                /rgbd_camera/camera_info@sensor_msgs/CameraInfo@ignition.msgs.CameraInfo
+                /rgbd_camera/image@sensor_msgs/Image@ignition.msgs.Image 
+                /rgbd_camera/depth_image@sensor_msgs/Image@ignition.msgs.Image
+                /semantic/colored_map@sensor_msgs/Image@ignition.msgs.Image
+                /semantic/labels_map@sensor_msgs/Image@ignition.msgs.Image
+                /model/marble_husky_sensor_config_2/pose@geometry_msgs/PoseStamped@ignition.msgs.Pose
+                /model/marble_husky_sensor_config_2/cmd_vel@geometry_msgs/Twist@ignition.msgs.Twist
+                /world/semantic_segmentation_husky/model/marble_husky_sensor_config_2/joint_state@sensor_msgs/JointState@ignition.msgs.Model
+                /model/marble_husky_sensor_config_2/tf@tf2_msgs/TFMessage@ignition.msgs.Pose_V
+                "/>
+
+
+<!-- Control the robot movement -->
+    <node pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" name="turtlebot3_teleop_keyboard"  output="screen">
+        <remap from="cmd_vel" to="/model/marble_husky_sensor_config_2/cmd_vel"/>
+    </node>
+
+
+</launch>
