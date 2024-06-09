@@ -1,6 +1,12 @@
 # gazebo-ignition-ros (Exclusively for ROS1)
 The aim of this repo is to create ros ignition simulation environment that uses sdf file and then create a bridge for several topics of ignition to ros. This repository creates a simple environment with few [ignition-fuel models](https://app.gazebosim.org/fuel/models) with husky robot mounted with RGBD and segmentation camera
 
+
+<div style="display: flex; justify-content: center;">
+  <img src="gifs/sim1.gif" width="400" alt="Semantic segmentation camera" style="margin-right: 20px;">
+  <img src="gifs/sim2.gif" width="400" alt="Depth camera simulation">
+</div>
+
 # gazebo-ignition installation
 Note that in this repository ROS Noetic and gazebo ignition Fortress are used in combination
 1. Follow this link to install ROS Noetic [ROS Noetic installation](https://wiki.ros.org/noetic/Installation/Ubuntu)
