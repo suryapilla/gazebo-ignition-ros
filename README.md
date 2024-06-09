@@ -3,8 +3,8 @@ The aim of this repo is to create ros ignition simulation environment that uses 
 
 
 <div style="display: flex; justify-content: center;">
-  <img src="gifs/sim1.gif" width="400" alt="Semantic segmentation camera" style="margin-right: 20px;">
-  <img src="gifs/sim2.gif" width="400" alt="Depth camera simulation">
+  <img src="semantic_segmentation_husky/gifs/sim1.gif" width="400" alt="Semantic segmentation camera" style="margin-right: 20px;">
+  <img src="semantic_segmentation_husky/gifs/sim2.gif" width="400" alt="Depth camera simulation">
 </div>
 
 # gazebo-ignition installation
